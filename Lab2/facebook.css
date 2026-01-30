@@ -1,0 +1,162 @@
+/* Основные настройки для всей страницы */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5; 
+    display: flex;         
+    justify-content: center;   
+    align-items: center;     
+    min-height: 100vh;       
+}
+
+/* Контейнер, который держит левую и правую колонки вместе */
+.main-container {
+    display: flex;
+    width: 980px;             
+    justify-content: space-between; 
+    align-items: flex-start;   
+    padding-bottom: 50px;  
+}
+
+.left-column {
+    width: 580px;
+    padding-top: 70px;         
+    box-sizing: border-box;    
+}
+
+.logo {
+    color: #1877f2;            /* Фирменный синий цвет */
+    font-size: 60px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+    letter-spacing: -2px;   
+    margin-left: -5px;        
+}
+
+.slogan {
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: normal;
+    margin: 0;
+    color: #1c1e21;
+}
+
+.right-column {
+    width: 396px;
+    text-align: center;
+}
+
+.login-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;        /* Скругленные углы */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1); /* Тень */
+    margin-bottom: 25px;       /* Отступ до текста снизу */
+}
+
+/* Поля ввода */
+input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    font-size: 17px;
+    box-sizing: border-box;  
+}
+
+input:focus {
+    outline: none;             
+    border-color: #1877f2;     
+    box-shadow: 0 0 0 2px #e7f3ff;
+}
+
+/* Синяя кнопка */
+.login-btn {
+    width: 100%;
+    background-color: #1877f2;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    line-height: 28px;
+}
+
+.login-btn:hover {
+    background-color: #166fe5; /* Темнеет при наведении */
+}
+
+/*"Забыли пароль?" */
+.forgot-link {
+    display: block;
+    color: #1877f2;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* Серая линия разделитель */
+.divider {
+    border: 0;
+    border-top: 1px solid #dadde1;
+    margin-bottom: 20px;
+}
+
+/* Зеленая кнопка */
+.create-btn {
+    background-color: #42b72a;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    line-height: 28px;
+}
+
+.create-btn:hover {
+    background-color: #36a420;
+}
+
+/* Мелкий текст под формой */
+.create-page-text {
+    font-size: 14px;
+    color: #1c1e21;
+}
+
+.create-page-text a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #1c1e21;
+}
+
+.create-page-text a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column; 
+        align-items: center;
+        width: 100%;
+    }
+    .left-column {
+        width: auto;
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .logo {
+        margin-left: 0;
+    }
+}

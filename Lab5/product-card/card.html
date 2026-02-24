@@ -1,0 +1,45 @@
+<div class="card">
+  <a class="img" [href]="product.link" target="_blank" rel="noopener">
+    <img [src]="selectedImage" [alt]="product.name" />
+  </a>
+
+  <div class="gallery" *ngIf="product.images?.length">
+    <button
+      class="thumb"
+      *ngFor="let img of product.images"
+      type="button"
+      (click)="setImage(img)"
+      [class.active]="img === selectedImage"
+      [attr.aria-label]="'Open image for ' + product.name"
+    >
+      <img [src]="img" alt="" />
+    </button>
+  </div>
+
+  <div class="body">
+    <h3 class="title">{{ product.name }}</h3>
+    <p class="desc">{{ product.description }}</p>
+
+    <div class="row">
+      <b class="price">{{ product.price | number }} ₸</b>
+      <span class="rating">⭐ {{ product.rating }}</span>
+    </div>
+
+    <!-- ✅ Like counter -->
+    <div class="row">
+      <span class="likes">❤️ {{ product.likes }}</span>
+
+      <!-- ✅ Like + Delete -->
+      <div class="actions">
+        <button class="btn" (click)="like()" type="button">Like</button>
+        <button class="btn secondary" (click)="remove()" type="button">Delete</button>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a class="btn secondary" [href]="product.link" target="_blank" rel="noopener">Kaspi</a>
+      <button class="btn" (click)="shareWhatsApp()" type="button">WhatsApp</button>
+      <button class="btn" (click)="shareTelegram()" type="button">Telegram</button>
+    </div>
+  </div>
+</div>
